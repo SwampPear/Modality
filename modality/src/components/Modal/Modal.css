@@ -1,0 +1,14 @@
+.modality__container {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.5;
+}
+
+.modality__modal {
+    background: aliceblue;
+    border-radius: 1.5rem;
+    width: 700px;
+    height: 500px;
+}
+
