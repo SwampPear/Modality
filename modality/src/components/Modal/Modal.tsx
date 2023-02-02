@@ -26,21 +26,34 @@ const defaultProps: IModalOptionalProps = {
 }
 
 const Modal = (props: IModalProps) => {
-  const [open, setOpen] = useState<boolean>(false)
+  const [opened, setOpened] = useState<boolean>(false)
 
+  const [backgroundAnimation, setBackgroundAnimation] = useState<string>('')
   const [backgroundAnimationIn, setBackgroundAnimationIn] = useState<string>('modality__background__animation-in')
   const [backgroundAnimationOut, setBackgroundAnimationOut] = useState<string>('modality__background__animation-out')
 
+  const [modalAnimation, setModalAnimation] = useState<string>('')
   const [modalAnimationIn, setModalAnimationIn] = useState<string>('modality__modal__animation-in')
   const [modalAnimationOut, setModalAnimationOut] = useState<string>('modality__modal__animation-out')
 
+  const open = () => {
+    if (!opened) {
+      setOpened(true)
+
+      setBackgroundAnimation(backgroundAnimationIn)
+
+      setTimeout(() => {
+        setModalAnimation(modalAnimationIn)
+      }, 500)
+    }
+  }
+
   return (
     <>
+      {open()}
       <div 
         className={
-          `modality__background 
-          ${props.backgroundClass ? props.backgroundClass : ''}
-          ${open ? backgroundAnimationIn : backgroundAnimationOut}`
+          `modality__background ${props.backgroundClass ? props.backgroundClass : ''} ${backgroundAnimation}`
         }
       />
       <div 
@@ -51,9 +64,7 @@ const Modal = (props: IModalProps) => {
       >
         <div 
           className={
-            `modality__modal
-            ${props.modalClass ? props.modalClass : ''}
-            ${open ? modalAnimationIn : modalAnimationOut}`
+            `modality__modal ${props.modalClass ? props.modalClass : ''} ${modalAnimation}`
           }
         >
           {props.children}

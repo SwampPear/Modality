@@ -2,11 +2,10 @@
     background: #000;
     height: 100vh;
     left: 0;
-    opacity: 0.5;
+    opacity: 0;
     position: fixed;
     top: 0;
     width: 100vw;
-    z-index: 998;
 }
 
 .modality__container {
@@ -26,14 +25,23 @@
     border-radius: 1.5rem;
     width: 40%;
     height: 40%;
+    opacity: 0;
 }
 
 @keyframes modality__background__animation-in {
-    
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
 }
 
 .modality__background__animation-in {
-    animation-name: modalit__background__animation-in;
+    animation-name: modality__background__animation-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes modality__background__animation-out {
@@ -42,14 +50,27 @@
 
 .modality__background__animation-out {
     animation-name: modality__background__animation-out;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes modality__modal__animation-in {
-
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 .modality__modal__animation-in {
-    animation-name: modality__modal__animation-in
+    animation-name: modality__modal__animation-in;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes modality__modal__animation-out {
@@ -58,5 +79,8 @@
 
 .modality__modal__animation-out {
     animation-name: modality__modal__animation-out;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
 
