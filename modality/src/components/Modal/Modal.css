@@ -27,3 +27,36 @@
     width: 40%;
     height: 40%;
 }
+
+@keyframes modality__background__animation-in {
+    
+}
+
+.modality__background__animation-in {
+    animation-name: modalit__background__animation-in;
+}
+
+@keyframes modality__background__animation-out {
+    
+}
+
+.modality__background__animation-out {
+    animation-name: modality__background__animation-out;
+}
+
+@keyframes modality__modal__animation-in {
+
+}
+
+.modality__modal__animation-in {
+    animation-name: modality__modal__animation-in
+}
+
+@keyframes modality__modal__animation-out {
+    
+}
+
+.modality__modal__animation-out {
+    animation-name: modality__modal__animation-out;
+}
+
