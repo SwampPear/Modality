@@ -1,1 +1,1 @@
-# Modality - Modals for React
+# Modality
